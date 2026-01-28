@@ -1,0 +1,11 @@
+#root,
+body {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  background-color: #5c1f06;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
