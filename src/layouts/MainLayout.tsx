@@ -6,7 +6,8 @@ export function MainLayout() {
   const links = [
     { name: 'home', path: '/' },
     { name: 'about', path: '/about' },
-    { name: 'posters', path: '/contact' },
+    { name: 'posters', path: '/posters' },
+    { name: 'contact', path: '/contact' },
     { name: 'login', path: '/login' },
   ]
 

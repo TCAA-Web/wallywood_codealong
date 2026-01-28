@@ -1,0 +1,6 @@
+@use '../../styles/globals' as globals;
+
+.titleStyle {
+  font-size: 2rem;
+  color: globals.$color_light_brown;
+}
