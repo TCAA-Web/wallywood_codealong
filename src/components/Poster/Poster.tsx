@@ -6,7 +6,7 @@ interface PosterProps {
   id: number
   imageUrl: string
   title: string
-  description: string
+  description?: string
   genres: Array<Genre>
 }
 
@@ -16,7 +16,7 @@ export function Poster({ id, imageUrl, title, description, genres }: PosterProps
       <img src={imageUrl}></img>
       <div>
         <h4>{title}</h4>
-        <div>{parse(description)}</div>
+        {description && <div>{parse(description)}</div>}
         <p>Genre:</p>
         {genres &&
           genres.map((genre: Genre) => {
