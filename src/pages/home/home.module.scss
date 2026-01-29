@@ -1,7 +1,8 @@
 @use '../../styles/globals' as globals;
 
 .homePageImage {
-  height: 30vh;
+  height: 40vh;
   width: 100%;
   object-fit: cover;
+  border-radius: 8px;
 }

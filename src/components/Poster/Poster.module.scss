@@ -1,0 +1,28 @@
+.posterStyle {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  img {
+    max-width: 160px;
+    margin-right: 16px;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  span {
+    font-size: 0.8rem;
+    display: inline-block;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
