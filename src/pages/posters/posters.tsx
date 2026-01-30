@@ -3,9 +3,10 @@ import { Grid } from '../../components/Grid/Grid'
 import { useFetch } from '../../hooks/useFetch'
 import { useState } from 'react'
 import type { MovieData } from '../../types/movieType'
+import { GenreSelect } from '../../components/GenreSelect/GenreSelect'
 
 export function Posters() {
-  const [selectedGenre, setSelectedGenre] = useState('komedie')
+  const [selectedGenre, setSelectedGenre] = useState<string>('komedie')
 
   const { data, isLoading, error } = useFetch<Array<MovieData>>(
     `http://localhost:3000/posters/list_by_genre/${selectedGenre}`,
@@ -22,14 +23,23 @@ export function Posters() {
   return (
     <>
       <h1>Posters page</h1>
-      <ul>
-        <li onClick={() => setSelectedGenre('drama')}>Drama</li>
-        <li onClick={() => setSelectedGenre('gysere')}>Gyser</li>
-      </ul>
-      <Grid gtc={3} gap={32}>
-        {data?.map((item) => {
-          return <Poster imageUrl={item.image} id={item.id} genres={item.genres} title={item.name} />
-        })}
+      <Grid gap={32} gtc={'1fr 4fr'}>
+        <GenreSelect setSelectedGenre={setSelectedGenre} />
+
+        <Grid gtc={'1fr 1fr 1fr'} gap={32}>
+          {data?.map((item) => {
+            return (
+              <Poster
+                key={item.id}
+                price={item.price}
+                imageUrl={item.image}
+                id={item.id}
+                genres={item.genres}
+                title={item.name}
+              />
+            )
+          })}
+        </Grid>
       </Grid>
     </>
   )

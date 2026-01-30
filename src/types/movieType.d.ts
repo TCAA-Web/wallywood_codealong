@@ -3,6 +3,7 @@ export interface MovieData {
   name: string
   description: string
   image: string
+  price: number
   genres: Genre[]
 }
 

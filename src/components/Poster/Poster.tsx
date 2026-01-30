@@ -8,9 +8,10 @@ interface PosterProps {
   title: string
   description?: string
   genres: Array<Genre>
+  price?: number
 }
 
-export function Poster({ id, imageUrl, title, description, genres }: PosterProps) {
+export function Poster({ id, imageUrl, title, description, genres, price }: PosterProps) {
   return (
     <div key={id} className={style.posterStyle}>
       <img src={imageUrl}></img>
@@ -22,6 +23,7 @@ export function Poster({ id, imageUrl, title, description, genres }: PosterProps
           genres.map((genre: Genre) => {
             return <span>{genre.title}</span>
           })}
+        {price && <p>Price: {price}</p>}
         <button>Læs mere</button>
       </div>
     </div>
