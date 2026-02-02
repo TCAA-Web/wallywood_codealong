@@ -11,11 +11,7 @@ interface NavbarProps {
 export function Navbar(props: NavbarProps) {
   const { logoNav, linksNav } = props
 
-  const { userData, setUserData } = useContext(AuthContext)
-
-  function logout() {
-    setUserData(null)
-  }
+  const { userData, logout } = useContext(AuthContext)
 
   return (
     <nav className={style.navbarStyle}>
@@ -23,7 +19,7 @@ export function Navbar(props: NavbarProps) {
       <ul>
         {linksNav.map((item) => {
           return item.name === 'login' && userData ? (
-            <li onClick={logout}>Logout</li>
+            <li onClick={logout}>LOGOUT</li>
           ) : (
             <li key={item.path}>
               <NavLink to={item.path}>{item.name.toUpperCase()}</NavLink>

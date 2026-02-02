@@ -30,6 +30,12 @@ export const AuthContextProvider = ({ children }: AuthContextProviderInterface) 
     if (userData !== null) localStorage.setItem('userData', JSON.stringify(userData))
   }, [userData])
 
+  const logout = () => {
+    if (localStorage.getItem('userData')) localStorage.removeItem('userData')
+
+    setUserData(null)
+  }
+
   // Returner AuthContext med alle de values vi vil bruge rundt om i appen
-  return <AuthContext.Provider value={{ userData, setUserData }}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={{ userData, setUserData, logout }}>{children}</AuthContext.Provider>
 }

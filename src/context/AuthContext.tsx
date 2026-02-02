@@ -5,6 +5,7 @@ import type { UserData } from '../types/userType'
 interface AuthContextProps {
   userData: UserData | null
   setUserData: React.Dispatch<SetStateAction<UserData | null>>
+  logout: () => void
 }
 
 // Opret context og kald den AuthContext
