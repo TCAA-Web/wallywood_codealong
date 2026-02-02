@@ -21,7 +21,7 @@ export function Poster({ id, imageUrl, title, description, genres, price }: Post
         <p>Genre:</p>
         {genres &&
           genres.map((genre: Genre) => {
-            return <span>{genre.title}</span>
+            return <span key={genre.id}>{genre.title}</span>
           })}
         {price && <p>Price: {price}</p>}
         <button>Læs mere</button>

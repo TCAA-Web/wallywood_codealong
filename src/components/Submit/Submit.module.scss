@@ -1,0 +1,20 @@
+.submitButton {
+  width: 200px;
+  height: 42px;
+  text-align: center;
+  background-color: rgb(240, 240, 240);
+  border: solid 1px #000000;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  padding-left: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:focus {
+    border: solid 3px black;
+  }
+
+  &:hover {
+    background-color: rgb(200, 200, 200);
+  }
+}
