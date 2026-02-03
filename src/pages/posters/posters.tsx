@@ -33,6 +33,8 @@ export function Posters() {
     `http://localhost:3000/posters/list_by_genre/${selectedGenre}?sort_key=${sort_Key}&sort_direction=${sort_Direction}`,
   )
 
+  console.log('data', data)
+
   if (isLoading) {
     return <h1>Loading data......</h1>
   }
@@ -51,6 +53,7 @@ export function Posters() {
           {data?.map((item) => {
             return (
               <Poster
+                slug={item.slug}
                 key={item.id}
                 price={item.price}
                 imageUrl={item.image}

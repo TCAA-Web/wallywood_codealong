@@ -5,6 +5,7 @@ export interface MovieData {
   image: string
   price: number
   genres: Genre[]
+  slug: string
 }
 
 export interface Genre {

@@ -28,6 +28,7 @@ export function Home() {
           data.map((item) => {
             return (
               <Poster
+                key={item.id}
                 genres={item.genres}
                 title={item.name}
                 imageUrl={item.image}
